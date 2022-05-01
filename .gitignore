@@ -1,1 +1,3 @@
 server/firebase.json
+server/node_modules
+notifyApp/node_modules
