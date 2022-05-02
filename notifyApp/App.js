@@ -11,7 +11,13 @@ import {Colors,} from 'react-native/Libraries/NewAppScreen';
 import PushNotification from "react-native-push-notification";
 
 PushNotification.configure({
+    onRegister: function (token) {
+        console.log("TOKEN:", token);
+    },
     onNotification: () => {},
+    onRegistrationError: function(err) {
+        console.error(err.message, err);
+    },
     popInitialNotification: true,
     requestPermissions: Platform.OS === 'ios',
 });
